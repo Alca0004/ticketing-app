@@ -12,7 +12,16 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        nav: '#18222f',
+        page: '#2b3441',
+        card: '#47566A',
+        'card-hover': '#4f5e74',
+        'default-text': '#f1f3f5',
+        'blue-accent': '#008d4d4',
+        'blue-accent-hover': '#009fff',
+      },
     },
   },
   plugins: [],
-}
+};
