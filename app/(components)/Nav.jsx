@@ -4,8 +4,8 @@ import Link from "next/link"
 
 const Nav = () => {
     return (
-        <nav>
-            <div>
+        <nav className="flex justify-between bg-nav p-4">
+            <div className="flex items-center space-x-4">
                 <Link href="/">
                     <FontAwesomeIcon icon={faHome} className="icon" />
                 </Link>
@@ -14,7 +14,7 @@ const Nav = () => {
                 </Link>
             </div>
             <div>
-                <p className="text-default-texte"></p>
+                <p className="text-default-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, minima.</p>
             </div>
         </nav>
     )
