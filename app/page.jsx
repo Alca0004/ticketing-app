@@ -3,18 +3,19 @@ import { BASE_URL } from './utils/url';
 
 const getTickets = async () => {
   try {
+    console.log("getTickets url", `${BASE_URL}/api/Tickets`);
     const res = await fetch(`${BASE_URL}/api/Tickets`, {
       cache: "no-store"
     });
+    console.log("getTickets response", res);
     const body = await res.json();
-    console.log(body);
+    console.log("getTickets body", body);
 
     return body;
   } catch (error) {
     console.log("Failed to get tickets", error)
     return { tickets: [] };
   }
-
 }
 
 const Dashboard = async () => {

@@ -10,11 +10,17 @@ const DeleteBlock = ({ id }) => {
     const router = useRouter()
 
     const deleteTicket = async () => {
-        const res = await fetch(`${BASE_URL}/api/Tickets/${id}`, {
-            method: 'DELETE'
-        });
-        if (res.ok) {
-            router.refresh()
+        try {
+            const res = await fetch(`${BASE_URL}/api/Tickets/${id}`, {
+                method: 'DELETE'
+            });
+            const body = await res.json();
+            console.log(body);
+
+            return body;
+        } catch (error) {
+            console.log("Failed to delete ticket", error)
+            return {};
         }
     };
 

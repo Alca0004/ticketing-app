@@ -3,13 +3,18 @@ import { BASE_URL } from "@/app/utils/url"
 const { default: TicketForm } = require("@/app/(components)/TicketForm")
 
 const getTicketById = async (id) => {
-    const res = await fetch(`${BASE_URL}/api/Tickets/${id}`, {
-        cache: 'no-store'
-    })
-    if (!res.ok) {
-        throw new Error('Failed to get Ticket.')
+    try {
+        const res = await fetch(`${BASE_URL}/api/Tickets/${id}`, {
+            cache: 'no-store'
+        })
+        const body = await res.json();
+        console.log(body);
+
+        return body;
+    } catch (error) {
+        console.log("Failed to get ticket", id, error)
+        return {};
     }
-    return res.json()
 }
 
 const TicketPage = async ({ params }) => {
