@@ -2,6 +2,7 @@
 import { faX } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRouter } from "next/navigation"
+import { BASE_URL } from "../utils/url"
 
 
 const DeleteBlock = ({ id }) => {
@@ -9,7 +10,7 @@ const DeleteBlock = ({ id }) => {
     const router = useRouter()
 
     const deleteTicket = async () => {
-        const res = await fetch(`${process.env.VERCEL_URL}/api/tickets/${id}`, {
+        const res = await fetch(`${BASE_URL}/api/tickets/${id}`, {
             method: 'DELETE'
         });
         if (res.ok) {

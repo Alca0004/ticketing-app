@@ -1,8 +1,9 @@
+import { BASE_URL } from "@/app/utils/url"
 
 const { default: TicketForm } = require("@/app/(components)/TicketForm")
 
 const getTicketById = async (id) => {
-    const res = await fetch(`${process.env.VERCEL_URL}/api/tickets/${id}`, {
+    const res = await fetch(`${BASE_URL}/api/tickets/${id}`, {
         cache: 'no-store'
     })
     if (!res.ok) {
