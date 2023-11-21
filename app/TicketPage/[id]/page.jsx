@@ -2,7 +2,7 @@
 const { default: TicketForm } = require("@/app/(components)/TicketForm")
 
 const getTicketById = async (id) => {
-    const res = await fetch(`/api/Tickets/${id}`, {
+    const res = await fetch(`${process.env.VERCEL_URL}/api/tickets/${id}`, {
         cache: 'no-store'
     })
     if (!res.ok) {
