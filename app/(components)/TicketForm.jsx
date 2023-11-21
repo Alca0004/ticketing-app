@@ -40,7 +40,7 @@ const EditTicketForm = ({ ticket }) => {
         e.preventDefault();
 
         if (EDITMODE) {
-            const res = await fetch(`${BASE_URL}/api/tickets/${ticket._id}`, {
+            const res = await fetch(`${BASE_URL}/api/Tickets/${ticket._id}`, {
                 method: "PUT",
                 headers: {
                     "Content-type": "application/json",
@@ -51,7 +51,7 @@ const EditTicketForm = ({ ticket }) => {
                 throw new Error("Failed to update ticket");
             }
         } else {
-            const res = await fetch(`${BASE_URL}/api/tickets`, {
+            const res = await fetch(`${BASE_URL}/api/Tickets`, {
                 method: "POST",
                 body: JSON.stringify({ formData }),
                 //@ts-ignore

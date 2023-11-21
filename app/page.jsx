@@ -3,7 +3,7 @@ import { BASE_URL } from './utils/url';
 
 const getTickets = async () => {
   try {
-    const res = await fetch(`${BASE_URL}/api/tickets`, {
+    const res = await fetch(`${BASE_URL}/api/Tickets`, {
       cache: "no-store"
     });
     const body = await res.json();
